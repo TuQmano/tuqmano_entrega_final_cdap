@@ -13,6 +13,13 @@ dipus_tucuman_2015_general <- get_election_data("tucuman",	"dip",	"gral",	2015,
                                                level = "departamento")
 
 
+
+data_lupu <- haven::read_dta("https://www.noamlupu.com/argentina_ecological_data.dta")
+
+
+write_csv(x = data_lupu, file = "entradas/data_lupu.csv")
+
+
 # DESCARGAR GEOMETRIAS Y GRILLAS ####
 
 geo_tuc <- get_geo(geo = "TUCUMAN") %>% 
