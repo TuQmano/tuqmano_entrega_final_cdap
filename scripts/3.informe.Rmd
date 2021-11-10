@@ -1,0 +1,45 @@
+---
+title: "Análisis Elección Tucuman"
+author: "Juan Pablo Ruiz Nicolini"
+date: "9/11/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(warning = FALSE, message = FALSE)
+
+```
+
+
+
+```{r cargo_librerias, echo=FALSE}
+
+library(tidyverse)
+library(polArverse)
+library(sf)
+library(here)
+
+```
+
+```{r, echo=FALSE}
+# CAPA DE GEOMETRIAS
+geo_tuc <- read_sf(here("entradas/geo_tuc.geojson"))
+# DATOS ELECTORALES
+dipus_tuc2015_gral <- read_sf(here("entradas/dipus_tucuman_2015_general.csv"))
+# GRILLA TUCUMAN
+
+grilla_tuc <- read_csv(here("entradas/grilla_tuc.csv"))
+```
+
+
+
+```{r}
+
+geo_tuc %>% 
+  ggplot2::ggplot() + #  SETTING color
+  ggplot2::geom_sf(color = "blue")
+
+
+```
+
